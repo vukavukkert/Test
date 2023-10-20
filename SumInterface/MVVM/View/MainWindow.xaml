@@ -1,0 +1,62 @@
+﻿<Window x:Class="SumInterface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SumInterface"
+        xmlns:view="clr-namespace:SumInterface.MVVM.View"
+        mc:Ignorable="d"
+        Title="Сумма ряда" Height="450" Width="500">
+    <Window.DataContext>
+        <view:ApplicationViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.25*"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="0 20 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <DockPanel Margin="0 10">
+                    <Label Content="X"
+                               HorizontalContentAlignment="Center"
+                               Width="30px"/>
+                    <TextBox Margin=" 0 "
+                                 Text="{Binding X}"/>
+                </DockPanel>
+                <DockPanel  Margin="0 10">
+                    <Label Content="eps"
+                               HorizontalContentAlignment="Center"
+                               Width="30px"/>
+                    <TextBox Margin=" 0 "
+                                 Text="{Binding Eps}"/>
+                </DockPanel>
+            </StackPanel>
+            <ListBox Grid.Column="1"
+                         Margin="10">
+
+            </ListBox>
+        </Grid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button Width="100px"
+                    Height="40px"
+                    Content="Вычислить"
+                    
+                    Margin="10 0"/>
+            <Button Width="100px"
+                    Height="40px"
+                    Content="Очистить"
+                    Margin="10 0"/>
+            <Button Width="100px"
+                    Height="40px"
+                    Content="Сохранить"
+                    Margin="10 0"/>
+        </StackPanel>
+    </Grid>
+</Window>
